@@ -13,17 +13,16 @@ from sklearn import metrics
 df = pd.read_csv("credit access.csv", encoding='latin-1')
 
 st.title("Hồi quy tuyến tính")
-st.write("## Dự báo khả năng tiếp cận vốn tín dụng của nông hộ")
+st.write("## Dự báo khả năng tiếp cận vốn tín dụng")
 
 uploaded_file = st.file_uploader("Choose a file", type=['csv'])
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file, encoding='latin-1')
-    df.to_csv("data.csv", index = False)
-
+    
 X = df.drop(columns=['y'])
 y = df['y']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state= 12)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state= 12) 
 
 model = LogisticRegression()
 
@@ -31,15 +30,10 @@ model.fit(X_train, y_train)
 
 yhat_test = model.predict(X_test)
 
-
 score_train=model.score(X_train, y_train)
 score_test=model.score(X_test, y_test)
 
-
 confusion_matrix = pd.crosstab(y_test, yhat_test, rownames=['Actual'], colnames=['Predicted'])
-
-
-
 
 menu = ["Mục tiêu của mô hình", "Xây dựng mô hình", "Sử dụng mô hình để dự báo"]
 choice = st.sidebar.selectbox('Danh mục tính năng', menu)
