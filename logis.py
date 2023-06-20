@@ -8,8 +8,6 @@ from sklearn.metrics import accuracy_score
 import streamlit as st
 from sklearn import metrics
 
-
-
 df = pd.read_csv("credit access.csv", encoding='latin-1')
 
 st.title("Hồi quy tuyến tính")
