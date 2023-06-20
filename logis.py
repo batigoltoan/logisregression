@@ -35,7 +35,7 @@ score_test=model.score(X_test, y_test)
 
 confusion_matrix = pd.crosstab(y_test, yhat_test, rownames=['Actual'], colnames=['Predicted'])
 
-menu = ["Mục tiêu của mô hình", "Xây dựng mô hình", "Sử dụng mô hình để dự báo"]
+menu = ["Mục tiêu của mô hình", "Xây dựng mô hình", "Sử dụng mô hình để dự báo", "Agribank Chi nhánh Bình Tân"]
 choice = st.sidebar.selectbox('Danh mục tính năng', menu)
 
 if choice == 'Mục tiêu của mô hình':    
@@ -66,7 +66,9 @@ elif choice == 'Xây dựng mô hình':
     fig2=sns.heatmap(confusion_matrix, annot=True)
     st.pyplot(fig2.figure)
     
-
+elif choice== 'Agribank Chi nhánh Bình Tân':
+    st.subheader("Agribank Chi nhánh Bình Tân")
+    st.image("Agribank.jpg")
     
 elif choice == 'Sử dụng mô hình để dự báo':
     st.subheader("Sử dụng mô hình để dự báo")
