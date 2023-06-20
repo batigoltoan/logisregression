@@ -49,8 +49,8 @@ if choice == 'Mục tiêu của mô hình':
 elif choice == 'Xây dựng mô hình':
     st.subheader("Xây dựng mô hình")
     st.write("##### 1. Hiển thị dữ liệu")
-    st.dataframe(df.head(3))
-    st.dataframe(df.tail(3))  
+    st.dataframe(df.head(5))
+    st.dataframe(df.tail(5))  
     
     st.write("##### 2. Trực quan hóa dữ liệu")
     u=st.text_input('Nhập biến muốn vẽ vào đây')
