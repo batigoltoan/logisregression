@@ -87,11 +87,10 @@ elif choice == 'Sử dụng mô hình để dự báo':
         git = st.number_input('Insert y')
         TN = st.number_input('Insert TN')
         GTC = st.number_input('Insert GTC')
-        GD = st.number_input('Insert GD')
         TCH = st.number_input('Insert TCH')
         VPCT = st.number_input('Insert VPCT')
         LS = st.number_input('Insert LS')
-        lines={'y':[git],'TN':[TN],'GTC':[GTC],'GD':[GD],'TCH':[TCH],'VPCT':[VPCT],'LS':[LS]}
+        lines={'y':[git],'TN':[TN],'GTC':[GTC],'TCH':[TCH],'VPCT':[VPCT],'LS':[LS]}
         lines=pd.DataFrame(lines)
         st.dataframe(lines)
         flag = True
